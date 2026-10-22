@@ -1,16 +1,20 @@
 # cave_tools - Data file
 
-# Class - Object Blueprint
+# Libraries: import
 import random
 
 
+### Class - Object Blueprint
 class Loot:
-    # Constructor - Function to instantiate a Loot object
+    ### Public attributes - create public instance attributes to store an object's data 
+    name = ""
+    value = 0
+    ### Constructor - Function to instantiate a Loot object
     def __init__(self, name, value):
         self.name = name
         self.value = value
 
-    # Public Method - Function within an object, defined within the class
+    ### Public Method - Function within an object, defined within the class
     def display_loot(self):
         print("="*36)
         print("          Item Description")
@@ -20,33 +24,33 @@ class Loot:
         print()
         input("Press enter to continue ")
 
-# Tuple - Values that aren't meant to change
+### Tuple - Values that aren't meant to change
 CAVE_ROOMS = ("Dust Dunes","Steel Coils", "Mercurial Pools", "Rust Halls")
-# LOOT_TABLE = (
-#     Loot("Dust Dial", 15),
-#     Loot("Coil Shard", 15),
-#     Loot("Themostat", 15),
-#     Loot("Rust Scepter", 15),
-# )
-LOOT_TABLE = ("Old Sun Dial", "Crystal Shard", "Gold Rod", "Cave Scepter")
 
-# Functions 
+# (List here to demonstrate that I know how to use lists)
+full_loot_table = ["Old Sun Dial", "Crystal Shard", "Gold Rod", "Cave Scepter"]
+
+### Functions 
 def show_title():
     print("="*31)
     print("          Cave Seeker")
     print("="*31)
     print("Come seek the secrets of the Cave.")
     print()
-    return input("Welcome! What is your name, Seeker? ->")
+    ### Functions: How to return a value from a function
+    return input("Welcome! What is your name, Seeker? -> ")
 
+### Functions: function with parameters
 def enter_room(room_name):
     print("-" * 31)
+    ### Functions: this parameter is used to get a value to put into a string:
     print(f"You step into {room_name}")
 
 def loot_menu(loot_pile):
     print("="*29)
     print("          Loot Menu")
     print()
+    ### For loop: accumulate a total or count as the loop runs
     for index, loot in enumerate(loot_pile):
         print(index, "-", loot.name, )
     print()
@@ -58,9 +62,12 @@ def loot_menu(loot_pile):
 
 def generate_loot_table(loot_names):
     loot_table = []
+    ### For Loop: used for to visit items in a collection
     for item in loot_names:
+        ### Objects: create an instance of your class
         loot_table.append(Loot(item, random.randint(1, 20)))
     return loot_table
 
-def die_roll():
-    return random.randint(1, 6) + random.randint(1, 6)
+def outcome_roll():
+    dice_roll = random.randint(1, 6) + random.randint(1, 6)
+    outcomes = []
