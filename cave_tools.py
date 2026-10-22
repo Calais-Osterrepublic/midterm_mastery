@@ -1,6 +1,9 @@
 # cave_tools - Data file
 
 # Class - Object Blueprint
+import random
+
+
 class Loot:
     # Constructor - Function to instantiate a Loot object
     def __init__(self, name, value):
@@ -34,7 +37,7 @@ def show_title():
     print("="*31)
     print("Come seek the secrets of the Cave.")
     print()
-    input()
+    return input("Welcome! What is your name, Seeker? ->")
 
 def enter_room(room_name):
     print("-" * 31)
@@ -42,7 +45,7 @@ def enter_room(room_name):
 
 def loot_menu(loot_pile):
     print("="*29)
-    print("          Item Menu")
+    print("          Loot Menu")
     print()
     for index, loot in enumerate(loot_pile):
         print(index, "-", loot.name, )
@@ -52,3 +55,12 @@ def loot_menu(loot_pile):
         print("Invalid Input: Not within length of list")
         user_input = input("Select an item (by number) ->")
     return loot_pile[int(user_input)]
+
+def generate_loot_table(loot_names):
+    loot_table = []
+    for item in loot_names:
+        loot_table.append(Loot(item, random.randint(1, 20)))
+    return loot_table
+
+def die_roll():
+    return random.randint(1, 6) + random.randint(1, 6)
