@@ -80,7 +80,7 @@ while len(player["progress"]) < len(CAVE_ROOMS):
 if player["loot"]:
     # if the player has duplicates, the value of every other variant decreases by one
     loot_duplcate_check_set = set()
-    for loot in len(player["loot"]):
+    for loot in player["loot"]:
         ### Lists: update an item in a list
         if loot.name in loot_duplcate_check_set:
             ### Public attributes - access and update an attribute through an object

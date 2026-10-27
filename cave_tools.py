@@ -32,6 +32,8 @@ full_loot_table = ["Old Sun Dial", "Crystal Shard", "Gold Rod", "Cave Scepter"]
 
 ### Functions 
 def show_title():
+    ### Lists: how to update a value in a list
+    full_loot_table[0] = "Ancient Sun Dial"
     print("="*31)
     print("          Cave Seeker")
     print("="*31)
@@ -58,6 +60,7 @@ def loot_menu(loot_pile):
     while int(user_input) > len(loot_pile) or int(user_input) < 0:
         print("Invalid Input: Not within length of list")
         user_input = input("Select an item (by number) ->")
+    ### Lists: access a value in a list
     return loot_pile[int(user_input)]
 
 def generate_loot_table(loot_names):
@@ -68,6 +71,6 @@ def generate_loot_table(loot_names):
         loot_table.append(Loot(item, random.randint(1, 20)))
     return loot_table
 
-def outcome_roll():
-    dice_roll = random.randint(1, 6) + random.randint(1, 6)
-    outcomes = []
+def die_roll():
+    return random.randint(1, 6) + random.randint(1, 6)
+    
