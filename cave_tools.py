@@ -32,7 +32,7 @@ full_loot_table = ["Old Sun Dial", "Crystal Shard", "Gold Rod", "Cave Scepter"]
 
 ### Functions 
 def show_title():
-    ### Lists: how to update a value in a list
+    ### Lists: how to access and update a value in a list
     full_loot_table[0] = "Ancient Sun Dial"
     print("="*31)
     print("          Cave Seeker")
