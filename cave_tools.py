@@ -14,7 +14,7 @@ class Loot:
         self.name = name
         self.value = value
 
-    ### Public Method - Function within an object, defined within the class
+    # Public Method - Function within an object, defined within the class
     def display_loot(self):
         print("="*36)
         print("          Item Description")
@@ -22,12 +22,12 @@ class Loot:
         print("Value:", self.value)
         print("="*36)
         print()
-        input("Press enter to continue ")
+        input("Press enter to continue ")##
 
 ### Tuple - Values that aren't meant to change
 CAVE_ROOMS = ("Dust Dunes","Steel Coils", "Mercurial Pools", "Rust Halls")
 
-# (List here to demonstrate that I know how to use lists)
+# Lists: create a list to store information
 full_loot_table = ["Old Sun Dial", "Crystal Shard", "Gold Rod", "Cave Scepter"]
 
 ### Functions 
